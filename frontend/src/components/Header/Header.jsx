@@ -52,7 +52,7 @@ const Header = () => {
   const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
 
   return (
-    <header className="header flex items-center" ref={headerRef}>
+    <header className="header flex items-center sticky__header" ref={headerRef}>
       <div className="container">
         <div className="flex items-center justify-between">
           {/* =========Logo======== */}
@@ -91,7 +91,7 @@ const Header = () => {
             </div>
 
             <Link to="/login">
-              <button className="bg-primaryColor py-2 px-6 text-white font-[600] h-[40px] flex justify-center rounded-[50px] ">
+              <button className="bg-primaryColor py-2 px-6 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px] ">
                 Login
               </button>
             </Link>
