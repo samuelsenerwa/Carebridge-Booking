@@ -16,6 +16,7 @@ import { BsArrowRight } from "react-icons/bs";
 import ServiceList from "../components/Services/ServiceList";
 import DoctorList from "../components/Doctors/DoctorList";
 import FaqList from "../components/Faq/FaqList";
+import Testimonial from "../components/Testimonial/Testimonial";
 
 const Home = () => {
   return (
@@ -286,6 +287,20 @@ const Home = () => {
       {/* ==============faq section end ============ */}
 
       {/* ================testimonials section ========== */}
+
+      <section>
+        <div className="container">
+          <div className="xl:w-[470px] mx-auto">
+            <h2 className="heading text-center">What our patients say</h2>
+            <p className="text__para text-center">
+              World class care for everyone offered in perfection with no shadow
+              of doubt
+            </p>
+          </div>
+
+          <Testimonial />
+        </div>
+      </section>
 
       {/* ================testimonials section end ========== */}
     </>
