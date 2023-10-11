@@ -1,32 +1,28 @@
+/*eslint-disable*/
+
 import React from "react";
+
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/logo.png";
-import { RiLinkedinFill } from "react-icons/ri";
-import {
-  AiFillYoutube,
-  AiFillGithub,
-  AiOutlineFacebook,
-  AiFillFacebook,
-} from "react-icons/ai";
+import logo from "../../assets/images/logo1.png";
+import { AiFillLinkedin } from "react-icons/ai";
+import { AiFillYoutube, AiFillFacebook, AiFillGithub } from "react-icons/ai";
 
 const socialLinks = [
   {
-    path: "", //enter your link here
-    icon: <AiFillYoutube className="grop-hover:text-white w-4 h-5" />,
-  },
-
-  {
-    path: "", //enter your link here
-    icon: <AiFillGithub className="grop-hover:text-white w-4 h-5" />,
-  },
-
-  {
-    path: "", //enter your link here
-    icon: <AiFillFacebook className="grop-hover:text-white w-4 h-5" />,
+    path: "https://www.youtube.com",
+    icon: <AiFillYoutube className="group-hover:text-white w-4 h-5" />,
   },
   {
-    path: "", //enter your link here
-    icon: <RiLinkedinFill className="grop-hover:text-white w-4 h-5" />,
+    path: "https://www.facebook.com",
+    icon: <AiFillFacebook className="group-hover:text-white w-4 h-5" />,
+  },
+  {
+    path: "https://www.github.com/samuelsenerwa",
+    icon: <AiFillGithub className="group-hover:text-white w-4 h-5" />,
+  },
+  {
+    path: "https://www.youtube.com",
+    icon: <AiFillLinkedin className="group-hover:text-white w-4 h-5" />,
   },
 ];
 
@@ -64,7 +60,7 @@ const quickLinks02 = [
   },
 ];
 
-quickLinks03 = [
+const quickLinks03 = [
   {
     path: "/",
     display: "Donate",
@@ -77,23 +73,19 @@ quickLinks03 = [
 
 const Footer = () => {
   const year = new Date().getFullYear();
-
   return (
     <footer className="pb-16 pt-10">
       <div className="container">
         <div className="flex justify-between flex-col md:flex-row flex-wrap gap-[30px]">
           <div>
-            <img src={logo} alt="" />
-            <p className="text-[16px] leading-7 font-[400] text-textColor">
-              Copyright {year} developed by Samuel Senerwa all rights reserved.
-            </p>
-
+            <img src={logo} alt="" className="w-16 h-16" />
+            <p>Copyright {year} developed by Samuel Senerwa</p>
             <div className="flex items-center gap-3 mt-4">
               {socialLinks.map((link, index) => (
                 <Link
                   to={link.path}
                   key={index}
-                  className="w-9 h-9 border border-solid border-[#181A1E] rounded-full flex items-center justify-center group hover:bg-primaryColor hover:border-none:"
+                  className="w-9 h-9 border border-solid border-[#181A1E] rounded-full flex items-center justify-center group hover:bg-primaryColor hover:border-none"
                 >
                   {link.icon}
                 </Link>
@@ -102,65 +94,59 @@ const Footer = () => {
           </div>
 
           <div>
-            <h2 className="text-[20px] leading-[30px] font-[700] mb-6 text-headingColor">
+            <h2 className="text-[20px] leading-[30px] font-700] mb-6 text-headingColor">
               Quick Links
             </h2>
+
             <ul>
-              {quickLinks01.map(
-                (item,
-                (index) => (
-                  <li key={index} className="mb-4">
-                    <Link
-                      to={item.path}
-                      className="text-[16px] leading-7 font-400 text-textColor"
-                    >
-                      {item.display}
-                    </Link>
-                  </li>
-                ))
-              )}
+              {quickLinks01.map((item, index) => (
+                <li key={index} className="mb-4">
+                  <Link
+                    to={item.path}
+                    className="text-[16px] leading-7 font-[400] text-textColor"
+                  >
+                    {item.display}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h2 className="text-[20px] leading-[30px] font-[700] mb-6 text-headingColor">
+            <h2 className="text-[20px] leading-[30px] font-700] mb-6 text-headingColor">
               I want to:
             </h2>
+
             <ul>
-              {quickLinks02.map(
-                (item,
-                (index) => (
-                  <li key={index} className="mb-4">
-                    <Link
-                      to={item.path}
-                      className="text-[16px] leading-7 font-400 text-textColor"
-                    >
-                      {item.display}
-                    </Link>
-                  </li>
-                ))
-              )}
+              {quickLinks02.map((item, index) => (
+                <li key={index} className="mb-4">
+                  <Link
+                    to={item.path}
+                    className="text-[16px] leading-7 font-[400] text-textColor"
+                  >
+                    {item.display}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h2 className="text-[20px] leading-[30px] font-[700] mb-6 text-headingColor">
-              Support
+            <h2 className="text-[20px] leading-[30px] font-700] mb-6 text-headingColor">
+              Sponsors
             </h2>
+
             <ul>
-              {quickLinks03.map(
-                (item,
-                (index) => (
-                  <li key={index} className="mb-4">
-                    <Link
-                      to={item.path}
-                      className="text-[16px] leading-7 font-400 text-textColor"
-                    >
-                      {item.display}
-                    </Link>
-                  </li>
-                ))
-              )}
+              {quickLinks03.map((item, index) => (
+                <li key={index} className="mb-4">
+                  <Link
+                    to={item.path}
+                    className="text-[16px] leading-7 font-[400] text-textColor"
+                  >
+                    {item.display}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
