@@ -31,6 +31,8 @@ const Doctors = () => {
         </div>
       </section>
 
+      {/* fix search by ID */}
+
       <section>
         <div className="container">
           <div className="xl:w-[470px] mx-auto">
