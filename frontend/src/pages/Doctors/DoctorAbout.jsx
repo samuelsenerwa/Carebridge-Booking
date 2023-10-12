@@ -6,7 +6,7 @@ const DoctorAbout = () => {
       <h3 className="text-[20px] leading-[30px] text-headingColor font-semibold flex items-center gap-2">
         About of
         <span className="text-irisBlueColor font-bold text-[24px] leading-9">
-          Dr. William Kimei
+          Dr. John Verstappen
         </span>
       </h3>
       <p className="text__para">
@@ -78,7 +78,7 @@ const DoctorAbout = () => {
             </p>
 
             <p className="text-[14px] leading-5 font-medium text-textColor">
-              Kenyatta National Hospital, Nairobi
+              Manhatan Hospital, Manhatan
             </p>
           </li>
         </ul>
