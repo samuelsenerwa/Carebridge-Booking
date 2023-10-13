@@ -3,6 +3,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import authRoute from "./Routes/auth.js";
 
 // Created configuration file
 dotenv.config();
@@ -28,7 +29,7 @@ const connectDB = async () => {
     });
     console.log("MongoDB database is connected");
   } catch (err) {
-    console.error("MongoDB database connection failed:", err);
+    console.error("MongoDB database connection failed:");
   }
 };
 
@@ -37,6 +38,7 @@ const connectDB = async () => {
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors(corsOptions));
+app.use("/api/v1/auth", authRoute); //domain/api/v1/auth/register
 
 app.listen(port, () => {
   connectDB();
