@@ -7,6 +7,8 @@ import { authenticate, restrict } from "../auth/verifyToken.js";
 
 const router = express.Router();
 
+// /doctor/doctorId/reviews/
+
 router
   .route("/")
   .get(getAllReviews)
