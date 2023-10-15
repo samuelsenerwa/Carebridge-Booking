@@ -22,7 +22,6 @@ export const authenticate = async (req, res, next) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
     req.userId = decoded.id;
     req.role = decoded.role;
-    console.log(decoded);
 
     next(); //call the next function so as the middleware will work
   } catch (err) {
