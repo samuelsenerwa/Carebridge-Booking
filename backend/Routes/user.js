@@ -6,11 +6,13 @@ import {
   getSingleUser,
 } from "../Controllers/userController.js";
 
-const router = express.Router();
+import { authenticate, restrict } from "../auth/verifyToken.js";
 
-router.get("/:id", getSingleUser);
-router.get("/", getAllUser);
-router.put("/:id", updateUser);
-router.delete("/:id", deleteUser);
+const router = express.Router();
+// data protection
+router.get("/:id", authenticate, restrict(["patient"]), getSingleUser);
+router.get("/", authenticate, restrict(["admin"]), getAllUser);
+router.put("/:id", authenticate, restrict(["patient"]), updateUser);
+router.delete("/:id", authenticate, restrict(["patient"]), deleteUser);
 
 export default router;
