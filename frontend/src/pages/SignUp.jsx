@@ -11,7 +11,7 @@ const SignUp = () => {
     name: "",
     email: "",
     password: "",
-    photo: "",
+    photo: setSelectedFile,
     gender: "",
     role: "patient",
   });
@@ -27,6 +27,7 @@ const SignUp = () => {
   };
 
   const submitHandler = async (event) => {
+    console.log(formData);
     event.preventDefault();
   };
   return (
@@ -34,7 +35,7 @@ const SignUp = () => {
       <div className="max-w-[1170px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           {/* ========= img box ========== */}
-          <div className="hidden lg:block bg-primaryColor roundel-lg">
+          <div className="hidden lg:block bg-primaryColor rounded-l-lg">
             <figure className="rounded-l-lg ">
               <img src={signupImg} alt="" className="w-full rounded-l-lg" />
             </figure>
@@ -52,7 +53,7 @@ const SignUp = () => {
                   placeholder="Full Name"
                   name="name"
                   value={formData.name}
-                  onClick={handleInputChange}
+                  onChange={handleInputChange}
                   className="w-full pr-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer"
                   required
                 />
@@ -63,7 +64,7 @@ const SignUp = () => {
                   placeholder="Enter your email"
                   name="email"
                   value={formData.email}
-                  onClick={handleInputChange}
+                  onChange={handleInputChange}
                   className="w-full pr-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer"
                   required
                 />
@@ -73,8 +74,8 @@ const SignUp = () => {
                   type="Password"
                   placeholder="password"
                   value={formData.password}
-                  onClick={handleInputChange}
-                  name="name"
+                  onChange={handleInputChange}
+                  name="password"
                   className="w-full pr-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor cursor-pointer"
                   required
                 />
@@ -86,7 +87,7 @@ const SignUp = () => {
                   <select
                     name="role"
                     value={formData.role}
-                    onClick={handleInputChange}
+                    onChange={handleInputChange}
                     className="text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none"
                   >
                     <option value="patient">Patient</option>
@@ -99,7 +100,7 @@ const SignUp = () => {
                   <select
                     name="gender"
                     value={formData.gender}
-                    onClick={handleInputChange}
+                    onChange={handleInputChange}
                     className="text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none"
                   >
                     <option value="">Select</option>
