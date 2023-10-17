@@ -79,7 +79,7 @@ export const getUserProfile = async (req, res) => {
   const userId = req.userId;
 
   try {
-    const user = await User.findById(user);
+    const user = await User.findById(userId);
 
     if (!user) {
       return res
@@ -124,11 +124,9 @@ export const getMyAppointments = async (req, res) => {
       .status(200)
       .json({ success: true, message: "Fetching Appointment", data: doctors });
   } catch (err) {
-    res
-      .status(500)
-      .json({
-        success: false,
-        message: "Something went wrong can't fetch appointments",
-      });
+    res.status(500).json({
+      success: false,
+      message: "Something went wrong can't fetch appointments",
+    });
   }
 };
