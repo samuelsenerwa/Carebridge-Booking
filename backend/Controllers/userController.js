@@ -1,4 +1,6 @@
 import User from "../models/UserSchema.js";
+import Booking from "../models/BookingSchema.js";
+import Doctor from "../models/DoctorSchema.js";
 
 export const updateUser = async (req, res) => {
   const id = req.params.id;
@@ -71,6 +73,8 @@ export const getAllUser = async (req, res) => {
   }
 };
 
+// get userProfile based on the data He/She provided
+
 export const getUserProfile = async (req, res) => {
   const userId = req.userId;
 
@@ -95,5 +99,36 @@ export const getUserProfile = async (req, res) => {
       success: false,
       message: "Something went wrong, can't fetch data",
     });
+  }
+};
+
+// get appointments
+
+export const getMyAppointments = async (req, res) => {
+  try {
+    // retrieve appointments from booking for specific user
+
+    const bookings = await Booking.find({ user: req.userId });
+
+    // Extract doctors Id from appointment
+
+    const doctorIds = bookings.map((el) => el.doctor.id);
+
+    // retrieve doctors using doctor Ids
+
+    const doctors = await Doctor.find({ _id: { $in: doctorIds } }).select(
+      "-password"
+    );
+
+    res
+      .status(200)
+      .json({ success: true, message: "Fetching Appointment", data: doctors });
+  } catch (err) {
+    res
+      .status(500)
+      .json({
+        success: false,
+        message: "Something went wrong can't fetch appointments",
+      });
   }
 };
