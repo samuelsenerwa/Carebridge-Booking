@@ -18,7 +18,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           closeOnClick
           pauseOnHover={false}
         />
-
         <App />
       </AuthContextProvider>
     </BrowserRouter>
