@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import signupImg from "../assets/images/signup.gif";
-import avatar from "../assets/images/doctor-img01.png";
 import { Link, useNavigate } from "react-router-dom";
 import uploadImageToCloudinary from "../utils/uploadCloudinary";
 import { BASE_URL } from "../config";
@@ -196,7 +195,7 @@ const SignUp = () => {
                   to="/login"
                   className="text-primaryColor font-medium ml-1"
                 >
-                  Register
+                  Login
                 </Link>
               </p>
             </form>
