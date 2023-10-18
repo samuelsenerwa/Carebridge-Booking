@@ -3,10 +3,10 @@
 import { useNavigate } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import { authContext } from "../context/AuthContext";
-import { useCallback } from "react";
+import { useContext } from "react";
 
 const ProtectedRoute = ({ children, allowedRoles }) => {
-  const { token, role } = useCallback(authContext);
+  const { token, role } = useContext(authContext);
 
   const isAllowed = allowedRoles.includes(role);
 
