@@ -102,7 +102,7 @@ export const getDoctorProfile = async (req, res) => {
     if (!doctor) {
       return res
         .status(404)
-        .json({ success: false, message: "User not found" });
+        .json({ success: false, message: "Doctor not found" });
     }
 
     const { password, ...rest } = doctor._doc;

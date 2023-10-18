@@ -1,5 +1,5 @@
 import { useEffect, useRef, useContext } from "react";
-import logo from "../../assets/images/logo1.png";
+import logo from "../../assets/images/care.png";
 import { NavLink, Link } from "react-router-dom";
 import { BiMenu } from "react-icons/bi";
 import { authContext } from "../../context/AuthContext";
@@ -53,12 +53,12 @@ const Header = () => {
   const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
 
   return (
-    <header className="header flex items-center sticky__header" ref={headerRef}>
+    <header className="header flex items-center" ref={headerRef}>
       <div className="container">
         <div className="flex items-center justify-between">
           {/* =========Logo======== */}
           <div>
-            <img src={logo} alt="" className="w-[120px] h-[120px]" />
+            <img src={logo} alt="" className="w-[100px] h-[80px]" />
           </div>
 
           {/* ========Menu========= */}
