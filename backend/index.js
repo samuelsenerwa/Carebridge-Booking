@@ -15,10 +15,10 @@ const app = express();
 const port = process.env.PORT || 8000;
 
 const corsOptions = {
-  // origin: true,
-  origin: ["https://carebridge-booking.vercel.app/"],
+  // orgin: true,
+  origin: "https://carebridge-booking.vercel.app", // Remove the square brackets
   methods: ["POST", "GET"],
-  credential: true,
+  credentials: true, // Correct the spelling of 'credentials'
 };
 
 app.get("/", (req, res) => {
