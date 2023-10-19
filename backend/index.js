@@ -16,7 +16,7 @@ const port = process.env.PORT || 8000;
 
 const corsOptions = {
   // origin: true,
-  origin: ["https://carebridge-booking.vercel.app/"],
+  origin: ["carebridge-booking-ynbh.vercel.app"],
   methods: ["POST", "GET"],
   credential: true,
 };
