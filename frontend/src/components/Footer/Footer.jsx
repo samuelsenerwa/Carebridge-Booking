@@ -79,7 +79,7 @@ const Footer = () => {
         <div className="flex justify-between flex-col md:flex-row flex-wrap gap-[30px]">
           <div>
             <img src={logo} alt="" className="w-16 h-16" />
-            <p>Copyright {year} developed by Samuel Senerwa</p>
+            <p>Copyright {year} developed by Carebridge</p>
             <div className="flex items-center gap-3 mt-4">
               {socialLinks.map((link, index) => (
                 <Link
