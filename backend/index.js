@@ -14,13 +14,6 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 8000;
 
-// const corsOptions = {
-//   // orgin: true,
-//   origin: "https://carebridge-booking.vercel.app", // Remove the square brackets
-//   methods: ["POST", "GET"],
-//   credentials: true, // Correct the spelling of 'credentials'
-// };
-
 const corsOptions = {
   origin: true,
 };
